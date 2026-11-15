@@ -1,13 +1,16 @@
 require("dotenv").config({ quiet: true });
 
+// 필수 환경 변수
 const required = ["MONGODB_URI", "SESSION_SECRET"];
 
+// 환경 변수 유무 검사
 const missing = required.filter((name) => !process.env[name]);
 
 if (missing.length > 0) {
   throw new Error("환경 변수가 없습니다: " + missing.join(", "));
 }
 
+// 배열로 한번에 Export
 module.exports = {
   nodeEnv: process.env.NODE_ENV || "development",
   port: Number(process.env.PORT) || 3000,
