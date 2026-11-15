@@ -10,7 +10,7 @@ Node.js 22 이상이 필요하다.
 
 ```bash
 npm install
-cp .env.example .env   # 값은 팀원에게 받아서 채운다
+cp .env.example .env   
 npm run dev            # http://localhost:3000, 파일을 고치면 자동 재시작
 ```
 
