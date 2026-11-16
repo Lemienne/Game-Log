@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 
+const connectDB = require("./config/db")
 const indexRouter = require("./routes/index");
 
 const app = express();
