@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("path");
 const logger = require("morgan");
 
-const connectDB = require("./config/db")
+const connectDB = require("./config/db");
 const indexRouter = require("./routes/index");
 
 const app = express();
@@ -16,6 +16,12 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+
+// 라우터 전에 DB 연결 대기 (실패 시 에러 핸들러로 전달)
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
 
 app.use("/", indexRouter);
 
