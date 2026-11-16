@@ -1,4 +1,5 @@
-require("dotenv").config({ quiet: true });
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "..", ".env"), quiet: true });
 
 // 필수 환경 변수
 const required = ["MONGODB_URI", "SESSION_SECRET"];
