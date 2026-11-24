@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="favorite" viewBox="0 0 88 88">
+    <path d="m44 0 10 32h34L61 52l10 33-27-20-27 20 10-33L0 32h34Z"/>
+  </symbol>
+  <symbol id="home" viewBox="0 0 88 88">
+    <path d="M0 38 39 3a7 7 0 0 1 10 0l39 35v38a12 12 0 0 1-12 12H62V62a18 18 0 0 0-36 0v26H12A12 12 0 0 1 0 76Z"/>
+    <path d="M33 88V62a11 11 0 0 1 22 0v26Z"/>
+  </symbol>
+  <symbol id="library" viewBox="0 0 88 88">
+    <path d="M12 0h28v41H0V12A12 12 0 0 1 12 0Zm36 0h28a12 12 0 0 1 12 12v29H48ZM0 48h40v40H12A12 12 0 0 1 0 76Zm48 0h40v28a12 12 0 0 1-12 12H48Z"/>
+  </symbol>
+  <symbol id="queue" viewBox="0 0 88 88">
+    <path d="M10 39c8-9 20-12 32-7l13-14-2-2A9 9 0 0 1 66 3l18 18a9 9 0 0 1-13 13l-2-2-13 13c4 13 1 24-8 32ZM0 82l22-22 5 5L5 87Z"/>
+  </symbol>
+  <symbol id="journal" viewBox="0 0 88 88">
+    <path fill-rule="evenodd" d="M19 0h36v26h26v62H7V12A12 12 0 0 1 19 0Zm6 37v7h37v-7Zm0 15v7h26v-7Zm0 14v7h37v-7Z"/>
+    <path d="M62 3v15h16Z"/>
+  </symbol>
+  <symbol id="account" viewBox="0 0 88 88">
+    <circle cx="44" cy="44" r="43"/>
+  </symbol>
+</svg>

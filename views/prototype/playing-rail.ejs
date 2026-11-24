@@ -1,0 +1,12 @@
+<ul class="home-rail playing-rail prototype-rail" tabindex="0" aria-labelledby="<%= headingId %>">
+  <% for (const [index, status] of statuses.entries()) { const number = index + 1; %>
+    <li class="playing-card">
+      <div class="poster-placeholder">게임 포스터 <%= number %></div>
+      <div class="playing-details">
+        <p class="home-meta"><%= status %></p>
+        <h3>게임 타이틀 <%= number %></h3>
+        <p class="playing-time"><%= status === "플레이 예정" ? "아직 플레이하지 않음" : "플레이 시간 " + number %></p>
+      </div>
+    </li>
+  <% } %>
+</ul>

@@ -1,0 +1,22 @@
+<h1 class="visually-hidden">라이브러리</h1>
+<ul class="library-menu">
+  <% for (const item of [
+    { label: "즐겨찾기", icon: "favorite", href: "/library/favorites" },
+    { label: "모든 게임", icon: "library", href: "/library/games" },
+    { label: "위시리스트", icon: "queue", href: "/library/games?tab=wishlist" },
+    { label: "플랫폼별", icon: "library" },
+  ]) { %>
+    <li>
+      <% if (item.href) { %><a class="library-menu-entry" href="<%= item.href %>"><% } else { %><span class="library-menu-entry"><% } %>
+        <svg class="library-menu-icon" viewBox="0 0 88 88" aria-hidden="true">
+          <use href="/images/navigation.svg#<%= item.icon %>"></use>
+        </svg>
+        <%= item.label %>
+      <% if (item.href) { %></a><% } else { %></span><% } %>
+    </li>
+  <% } %>
+</ul>
+<section class="library-section" aria-labelledby="recent-heading">
+  <h2 id="recent-heading">최근 활동</h2>
+  <%- include("cards", { listClass: "library-grid", headingId: "recent-heading" }) %>
+</section>

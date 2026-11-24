@@ -1,0 +1,49 @@
+<% const itemNumbers = [1, 2, 3]; %>
+<section class="home-section" aria-labelledby="playing-heading">
+  <p class="home-eyebrow">지금 몰두 중</p>
+  <h1 id="playing-heading">지금 플레이 중인 게임</h1>
+  <p class="home-subtitle">이어서 즐기기</p>
+  <ul class="home-rail playing-rail" tabindex="0" aria-labelledby="playing-heading">
+    <% for (const number of itemNumbers) { %>
+      <li>
+        <a class="playing-card home-game-link" href="/library/games/<%= number %>?from=home"
+          aria-labelledby="home-game-title-<%= number %>" draggable="false">
+          <div class="poster-placeholder">게임 포스터 <%= number %></div>
+          <div class="playing-details">
+            <p class="home-meta">플레이 중</p>
+            <h2 id="home-game-title-<%= number %>">게임 타이틀 <%= number %></h2>
+            <p class="playing-time">플레이 시간 <%= number %></p>
+          </div>
+        </a>
+      </li>
+    <% } %>
+  </ul>
+</section>
+
+<section class="home-section" aria-labelledby="memo-heading">
+  <h2 id="memo-heading"><a class="home-section-link" href="/journal">메모</a></h2>
+  <ul class="home-rail memo-rail" tabindex="0" aria-labelledby="memo-heading">
+    <% for (const number of itemNumbers) { %>
+      <li class="memo-card">
+        <h3>게임 타이틀 <%= number %></h3>
+        <p>메모 내용 <%= number %></p>
+        <p class="home-meta">날짜 <%= number %> · 플레이 일지</p>
+      </li>
+    <% } %>
+  </ul>
+</section>
+
+<section class="home-section" aria-labelledby="queue-heading">
+  <h2 id="queue-heading"><a class="home-section-link" href="/queue">다음 플레이</a></h2>
+  <ul class="home-queue">
+    <% for (const number of itemNumbers) { %>
+      <li class="queue-item">
+        <div class="poster-placeholder">게임 포스터 <%= number %></div>
+        <div>
+          <h3>게임 타이틀 <%= number %></h3>
+          <p class="home-meta"><% if (number === 1) { %>Nintendo Switch · <% } %>아직 플레이하지 않음</p>
+        </div>
+      </li>
+    <% } %>
+  </ul>
+</section>

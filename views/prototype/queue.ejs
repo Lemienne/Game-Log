@@ -1,0 +1,16 @@
+<h1 id="queue-featured-heading">다음에는 이 게임</h1>
+<p class="prototype-subtitle">기다리는 모험을 나만의 순서로.</p>
+<%- include("playing-rail", { headingId: "queue-featured-heading", statuses: ["플레이 예정", "완료", "플레이 중"] }) %>
+<section class="library-section">
+  <h2>나의 플레이 순서</h2>
+  <ol class="prototype-order">
+    <% for (const number of [1, 2, 3]) { %>
+      <li class="prototype-order-row">
+        <strong><%= String(number).padStart(2, "0") %></strong>
+        <span class="poster-placeholder library-poster">게임 포스터 <%= number %></span>
+        <span>게임 타이틀 <%= number %><small>게임 플랫폼 <%= number %></small></span>
+        <span class="library-row-more" aria-hidden="true">•••</span>
+      </li>
+    <% } %>
+  </ol>
+</section>

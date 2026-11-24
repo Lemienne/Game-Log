@@ -1,0 +1,27 @@
+<h1>탐색</h1>
+<label class="prototype-search">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" aria-hidden="true">
+    <circle cx="10.6" cy="10.6" r="8.5"/>
+    <path d="m16.7 16.7 5.5 5.5"/>
+  </svg>
+  <input type="search" aria-label="게임, 장르, 플랫폼 검색" placeholder="게임, 장르, 플랫폼 검색">
+</label>
+<div class="library-segments">
+  <span class="library-segment-current">전체</span><span>RPG</span><span>어드벤처</span><span>액션</span>
+</div>
+<section class="library-section">
+  <h2 id="discover-heading">새로운 모험을 찾아서</h2>
+  <%- include("playing-rail", { headingId: "discover-heading", statuses: ["완료", "플레이 중", "플레이 예정"] }) %>
+</section>
+<section class="library-section">
+  <h2>관심 있는 게임</h2>
+  <ul class="library-grid">
+    <% for (const number of [1, 2, 3]) { %>
+      <li class="library-card">
+        <div class="poster-placeholder library-poster">게임 포스터 <%= number %></div>
+        <span>게임 타이틀 <%= number %></span>
+        <small>게임 플랫폼 <%= number %></small>
+      </li>
+    <% } %>
+  </ul>
+</section>

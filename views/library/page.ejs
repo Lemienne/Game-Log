@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include("../partials/head") %>
+  <body class="<%= showNavigation ? 'has-navigation' : '' %>">
+    <%- include("../partials/header") %>
+    <main class="page-content library-content">
+      <%- include(screen) %>
+    </main>
+    <%- include("../partials/foot") %>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<%
+  const { headerBack, headerHref, headerLabel, showHeaderMore, showSearch } = locals;
+%>
+<header class="page-header<%= headerBack ? ' library-subheader' : showSearch || headerLabel ? ' home-header' : '' %>">
+  <% if (headerBack) { %>
+    <a class="search-link library-header-button" href="<%= headerBack %>" aria-label="뒤로">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+        <path d="m15 4-8 8 8 8"/>
+      </svg>
+    </a>
+  <% } else { %>
+    <a class="brand" href="<%= headerHref || '/' %>">
+      <% if (showSearch || headerLabel) { %>
+        <svg width="22" height="18" viewBox="0 0 22 18" fill="currentColor" aria-hidden="true" focusable="false">
+          <path fill-rule="evenodd" d="M0 9a11.5 11.5 0 0 1 22 0A11.5 11.5 0 0 1 0 9Zm5 0a6 6 0 1 0 12 0A6 6 0 0 0 5 9Z"/>
+          <circle cx="11" cy="9" r="3.5"/>
+        </svg>
+      <% } %>
+      <%= headerLabel || (showSearch ? "홈" : "Game Log") %>
+    </a>
+  <% } %>
+  <% if (showSearch) { %>
+    <div class="header-actions">
+      <a class="search-link library-header-button" href="/search" aria-label="게임 검색">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" aria-hidden="true" focusable="false">
+          <circle cx="10.6" cy="10.6" r="8.5"/>
+          <path d="m16.7 16.7 5.5 5.5"/>
+        </svg>
+      </a>
+      <% if (showHeaderMore) { %>
+        <button class="search-link library-header-button" type="button" aria-label="더 보기" disabled>•••</button>
+      <% } %>
+    </div>
+  <% } %>
+</header>

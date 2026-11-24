@@ -1,0 +1,41 @@
+<%
+  const steamStatusLabels = {
+    unregistered: "Steam 계정을 연동해주세요",
+    unavailable: "Steam 연결 불가",
+    connected: "Steam 연결됨",
+  };
+  const status = locals.steamState ?? "unregistered";
+%>
+<section class="account-profile">
+  <% if (accountAvatarUrl) { %>
+    <img class="account-profile-avatar" src="<%= accountAvatarUrl %>" alt="">
+  <% } else { %>
+    <span class="account-profile-avatar" aria-hidden="true">L</span>
+  <% } %>
+  <div><h1>나의 게임로그</h1><small>이메일</small></div>
+</section>
+<section class="library-section">
+  <h2>Steam 연동</h2>
+  <div class="prototype-panel account-steam">
+    <p class="account-steam-status" data-state="<%= status %>">
+      <span aria-hidden="true">●</span> <%= steamStatusLabels[status] %>
+    </p>
+    <% if (status !== "unregistered") { %>
+      <p>나의 Steam 라이브러리</p>
+      <small>마지막 동기화 · 동기화 시간</small>
+    <% } %>
+    <button class="library-play-button" type="button" disabled><%= status === "unregistered" ? "Steam 계정 연동" : "지금 동기화" %></button>
+  </div>
+  <div class="account-refresh">
+    <label for="steam-auto-refresh">자동 최신화</label>
+    <input id="steam-auto-refresh" class="prototype-switch" type="checkbox" role="switch" checked
+      aria-describedby="steam-auto-refresh-description">
+    <small id="steam-auto-refresh-description">공개된 게임 정보와 플레이 시간을 가져옵니다.</small>
+  </div>
+</section>
+<ul class="library-menu account-menu">
+  <li><a class="library-menu-entry" href="/account/stats">나의 통계와 Recap</a></li>
+  <li><a class="library-menu-entry" href="/library">라이브러리 관리</a></li>
+  <li><a class="library-menu-entry" href="/journal">플레이 기록</a></li>
+</ul>
+<a class="library-play-button account-logout" href="/login">로그아웃</a>

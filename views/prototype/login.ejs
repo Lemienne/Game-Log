@@ -1,0 +1,16 @@
+<section class="login-preview">
+  <h1>당신의 게임,<br>하나의 라이브러리.</h1>
+  <p class="prototype-subtitle">좋아하는 게임과 모든 순간을<br>Game Log에서 이어가세요.</p>
+  <ul class="login-posters">
+    <% for (const number of [1, 2, 3]) { %>
+      <li class="poster-placeholder library-poster">게임 포스터 <%= number %></li>
+    <% } %>
+  </ul>
+  <div class="login-fields">
+    <label>이메일<input type="email" autocomplete="username" placeholder="이메일을 입력하세요"></label>
+    <label>비밀번호<input type="password" autocomplete="current-password" placeholder="비밀번호를 입력하세요"></label>
+  </div>
+  <button class="library-play-button login-submit" type="button" disabled>로그인</button>
+  <div class="login-links"><span>회원가입</span><span>비밀번호 찾기</span></div>
+  <small>나만의 게임 이야기를 시작해 보세요.</small>
+</section>
