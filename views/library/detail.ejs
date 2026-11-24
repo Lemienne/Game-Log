@@ -1,0 +1,27 @@
+<div class="library-detail-hero">
+  <div class="poster-placeholder library-poster">게임 포스터 <%= game %></div>
+  <h1>게임 타이틀 <%= game %></h1>
+</div>
+<dl class="library-detail-facts">
+  <div><dt>플레이 시간</dt><dd>플레이 시간 <%= game %></dd></div>
+  <div><dt>배급사</dt><dd>배급사 <%= game %></dd></div>
+</dl>
+<p class="library-rating">
+  <span aria-hidden="true">★★★★☆</span>
+  <small>내 평점 4/5</small>
+</p>
+<button class="library-play-button" type="button" disabled>플레이 중으로 변경</button>
+<div class="library-segments">
+  <span class="library-segment-current">일지</span>
+  <span>목표</span>
+  <span>리뷰</span>
+</div>
+<ul class="library-detail-notes">
+  <% for (const number of [1, 2]) { %>
+    <li class="memo-card">
+      <h3>게임 타이틀 <%= game %></h3>
+      <p>메모 내용 <%= number %></p>
+      <p class="home-meta">날짜 <%= number %> · 플레이 일지</p>
+    </li>
+  <% } %>
+</ul>

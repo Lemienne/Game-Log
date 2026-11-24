@@ -1,0 +1,33 @@
+<h1>플레이의 순간들</h1>
+<div class="library-segments">
+  <span class="library-segment-current">플레이 일지</span><span>목표 노트</span><span>리뷰</span>
+</div>
+<section class="library-section">
+  <h2>날짜 1</h2>
+  <article class="prototype-panel journal-entry">
+    <small class="prototype-accent">게임 타이틀 1</small>
+    <h3>메모 제목 1</h3>
+    <p>메모 내용 1</p>
+    <small>시간 1 · 수정</small>
+  </article>
+</section>
+<section class="library-section">
+  <h2>진행 중인 목표</h2>
+  <ul class="journal-goals">
+    <% for (const number of [1, 2, 3]) { %>
+      <li><span class="goal-indicator" aria-hidden="true"></span>목표 내용 <%= number %></li>
+    <% } %>
+  </ul>
+</section>
+<section class="library-section">
+  <h2>이전 기록</h2>
+  <ul class="library-grid journal-memos">
+    <% for (const number of [2, 3]) { %>
+      <li class="memo-card">
+        <h3>게임 타이틀 <%= number %></h3>
+        <p>메모 내용 <%= number %></p>
+        <p class="home-meta">날짜 <%= number %> · 플레이 일지</p>
+      </li>
+    <% } %>
+  </ul>
+</section>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include("../partials/head") %>
+  <body class="<%= showNavigation ? 'has-navigation' : '' %>">
+    <%- include("../partials/header") %>
+    <main class="page-content library-content prototype-content">
+      <%- include(screen) %>
+    </main>
+    <%- include("../partials/foot") %>
+    <% if (screen === "account") { %>
+      <script src="/javascripts/account-settings.js" defer></script>
+    <% } %>
+  </body>
+</html>

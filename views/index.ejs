@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<html lang="ko">
+  <%- include("partials/head") %>
+  <body class="<%= showNavigation ? 'has-navigation' : '' %>">
+    <%- include("partials/header") %>
+    <main class="page-content<%= currentSection?.path === "/" ? " home-content" : "" %>">
+      <% if (currentSection?.path === "/") { %>
+        <%- include("partials/home") %>
+      <% } else { %>
+        <h1><%= title %></h1>
+      <% } %>
+    </main>
+    <%- include("partials/foot") %>
   </body>
 </html>

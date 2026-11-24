@@ -1,0 +1,23 @@
+<nav class="tab-bar" aria-label="주 메뉴">
+  <ul class="tab-list">
+    <% for (const item of navigation) { %>
+      <li>
+        <a class="tab-link" href="<%= item.path %>" <% if (item === currentSection) { %>aria-current="page"<% } %>>
+          <svg class="tab-icon tab-icon--<%= item.icon %>" viewBox="0 0 88 88" aria-hidden="true" focusable="false">
+            <use href="/images/navigation.svg#<%= item.icon %>"></use>
+            <% if (item.icon === "account" && accountAvatarUrl) { %>
+              <defs>
+                <clipPath id="account-avatar-clip">
+                  <circle cx="44" cy="44" r="43"/>
+                </clipPath>
+              </defs>
+              <image href="<%= accountAvatarUrl %>" width="88" height="88"
+                preserveAspectRatio="xMidYMid slice" clip-path="url(#account-avatar-clip)"/>
+            <% } %>
+          </svg>
+          <span><%= item.label %></span>
+        </a>
+      </li>
+    <% } %>
+  </ul>
+</nav>

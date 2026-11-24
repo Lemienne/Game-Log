@@ -1,0 +1,27 @@
+<h1>게임 통계</h1>
+<div class="library-segments">
+  <span class="library-segment-current">이번 달</span><span>올해</span><span>전체</span>
+</div>
+<section class="stats-summary">
+  <small>이번 달 플레이 시간</small>
+  <strong>플레이 시간</strong>
+  <small>동기화 이력 기준 · 날짜</small>
+  <dl class="stats-counts">
+    <% for (const label of ["보유 게임", "완료", "100% 완료"]) { %>
+      <div><dt><%= label %></dt><dd>게임 수</dd></div>
+    <% } %>
+  </dl>
+</section>
+<section class="library-section stats-genres">
+  <h2>나의 장르</h2>
+  <% for (const [genre, width] of [["RPG", 50], ["액션", 30], ["어드벤처", 20]]) { %>
+    <div class="stats-genre">
+      <div><span><%= genre %></span><small>비율</small></div>
+      <div class="stats-track" aria-hidden="true"><span style="width: <%= width %>%"></span></div>
+    </div>
+  <% } %>
+</section>
+<section class="library-section">
+  <h2>나의 Recap</h2>
+  <div class="prototype-panel stats-recap">완료한 모험을 돌아보세요.</div>
+</section>

@@ -1,0 +1,11 @@
+<ul class="<%= listClass %>" aria-labelledby="<%= headingId %>" <% if (listClass.includes("home-rail")) { %>tabindex="0"<% } %>>
+  <% for (const number of games) { %>
+    <li>
+      <a class="library-card" href="/library/games/<%= number %>">
+        <span class="poster-placeholder library-poster">게임 포스터 <%= number %></span>
+        <span>게임 타이틀 <%= number %></span>
+        <small>게임 플랫폼 <%= number %></small>
+      </a>
+    </li>
+  <% } %>
+</ul>
